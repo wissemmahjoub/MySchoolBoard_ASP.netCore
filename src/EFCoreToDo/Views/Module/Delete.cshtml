@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Delete a Module";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model EFCoreToDo.Models.Module
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete Module </h2>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="ModuleId" />
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label>Please confirm to delete Module</label>
+            <div class="col-md-10">
+                <input type="submit" value="Delete" class="btn btn-default" />
+                <a asp-action="Index" class="btn btn-default">Cancel</a>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@*-By-Wissem-*@
+
+
+
+
+
+

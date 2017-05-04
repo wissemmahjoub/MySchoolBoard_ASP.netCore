@@ -1,0 +1,155 @@
+﻿<!-- Bootstrap core CSS -->
+<link href="~/css/bootstrap.min.css" rel="stylesheet">
+<link href="~/css/bootstrap-reset.css" rel="stylesheet">
+
+<!--Animation css-->
+<link href="~/css/animate.css" rel="stylesheet">
+
+<!--Icon-fonts css-->
+<link href="~/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+<link href="~/assets/ionicon/css/ionicons.min.css" rel="stylesheet" />
+<link href="~/assets/material-design-iconic-font/css/material-design-iconic-font.min.css" rel="stylesheet" />
+
+<!-- Custom styles for this template -->
+<link href="~/css/style.css" rel="stylesheet">
+<link href="~/css/helper.css" rel="stylesheet">
+
+
+
+
+<script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','../../../www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-62751496-1', 'auto');
+          ga('send', 'pageview');
+
+</script>
+
+
+
+
+@{
+    ViewBag.Title = "List of Homework By Module ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model IEnumerable<EFCoreToDo.Models.Homework>
+
+
+
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <ul class="timeline m-b-30">
+
+
+            @foreach (var HomworkItem in Model)
+            {
+
+                @if ((HomworkItem.HomeworkId == 12) || (HomworkItem.HomeworkId == 52) || (HomworkItem.HomeworkId == 14) || (HomworkItem.HomeworkId == 16) || (HomworkItem.HomeworkId == 18) || (HomworkItem.HomeworkId == 19) || (HomworkItem.HomeworkId == 22) || (HomworkItem.HomeworkId == 23) || (HomworkItem.HomeworkId == 24) ||
+            (HomworkItem.HomeworkId == 26) || (HomworkItem.HomeworkId == 28) || (HomworkItem.HomeworkId == 29) || (HomworkItem.HomeworkId == 31) || (HomworkItem.HomeworkId == 33) || (HomworkItem.HomeworkId == 34) ||
+            (HomworkItem.HomeworkId == 36) || (HomworkItem.HomeworkId == 37) || (HomworkItem.HomeworkId == 38) ||
+            (HomworkItem.HomeworkId == 39) || (HomworkItem.HomeworkId == 40) || (HomworkItem.HomeworkId == 45) || (HomworkItem.HomeworkId == 42) ||
+            (HomworkItem.HomeworkId == 43) || (HomworkItem.HomeworkId == 46) || (HomworkItem.HomeworkId == 48) || (HomworkItem.HomeworkId == 49) ||
+            (HomworkItem.HomeworkId == 50) || (HomworkItem.HomeworkId == 52) || (HomworkItem.HomeworkId == 53) || (HomworkItem.HomeworkId == 55))
+                {
+
+
+
+                    <li>
+                        <div class="timeline-badge danger">
+                            <i class="fa fa-save"></i>
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title">@Html.DisplayFor(modelItem => HomworkItem.Label)</h4>
+                                <p>
+                                    <small class="text-muted"><i class="fa fa-time"></i> 12/12/1992</small>
+                                </p>
+                            </div>
+                            <div class="timeline-body">
+                                <p>
+                                    Difficulty : @Html.DisplayFor(modelItem => HomworkItem.difficulty)
+                                    <hr>
+                                    @Html.DisplayFor(modelItem => HomworkItem.HomeworkDescription)
+                                    <hr>
+                                    Date Limit :  @Html.DisplayFor(modelItem => HomworkItem.DateLimit)
+                                </p>
+                            </div>
+                            <hr>
+                            <div class="btn-group">
+                                <a class="btn btn-info btn-rounded m-b-5" asp-action="Edit" asp-route-id="@HomworkItem.HomeworkId">Edit</a>
+
+                            </div>
+                            <div class="btn-group">
+                                <a class="btn btn-info btn-rounded m-b-5" asp-action="Delete" asp-route-id="@HomworkItem.HomeworkId">Delete</a>
+
+                            </div>
+
+                        </div>
+                    </li>
+
+                }
+                else
+                {
+
+                    <li class="timeline-inverted">
+                        <div class="timeline-badge danger">
+                            <i class="fa fa-save"></i>
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title">@Html.DisplayFor(modelItem => HomworkItem.Label)</h4>
+                                <p>
+                                    <small class="text-muted"><i class="fa fa-time"></i> 12/12/1992</small>
+                                </p>
+                            </div>
+                            <div class="timeline-body">
+                                <p>
+                                    Difficulty : @Html.DisplayFor(modelItem => HomworkItem.difficulty)
+                                    <hr>
+                                    @Html.DisplayFor(modelItem => HomworkItem.HomeworkDescription)
+                                    <hr>
+                                    Date Limit :  @Html.DisplayFor(modelItem => HomworkItem.DateLimit)
+                                </p>
+                            </div>
+                            <hr>
+                            <div class="btn-group">
+                                <a class="btn btn-info btn-rounded m-b-5" asp-action="Edit" asp-route-id="@HomworkItem.HomeworkId">Edit</a>
+
+                            </div>
+                            <div class="btn-group">
+                                <a class="btn btn-info btn-rounded m-b-5" asp-action="Delete" asp-route-id="@HomworkItem.HomeworkId">Delete</a>
+
+                            </div>
+
+                        </div>
+                    </li>
+
+
+
+                }
+
+
+            }
+            }
+
+        </ul>
+    </div>
+</div>
+
+
+<script src="~/js/jquery.js"></script>
+<script src="~/js/bootstrap.min.js"></script>
+<script src="~/js/pace.min.js"></script>
+<script src="~/js/wow.min.js"></script>
+<script src="~/js/jquery.nicescroll.js" type="text/javascript"></script>
+
+<script src="~/js/jquery.app.js"></script>
+
+
+@*-By-Wissem-*@

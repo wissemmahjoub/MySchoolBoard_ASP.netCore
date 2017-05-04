@@ -1,0 +1,60 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script>
+
+
+    var TNameModule = JSON.parse('@ViewBag.dataNameModule');
+    var TNbreHmwrk = JSON.parse('@ViewBag.dataNombreHomework');
+
+</script>
+<script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawStuff);
+
+      function drawStuff() {
+
+
+          //var TNameModule = ["A", "B", "C", "D"];
+          //var TNbreHmwrk = [8, 5, 2, 6];
+
+
+
+          var i = 0;
+          var tableau = [["Module", "Number  of homework"]];
+          while (i <= TNameModule.length) {
+              tableau.push([TNameModule[i],TNbreHmwrk[i]]);
+              i++;
+          }
+
+          var data = new google.visualization.arrayToDataTable(tableau);
+
+
+
+        var options = {
+          title: 'Chess opening moves',
+          width: 900,
+          legend: { position: 'none' },
+          chart: { title: 'Chess opening moves',
+                   subtitle: 'popularity by percentage' },
+          bars: 'horizontal', // Required for Material Bar Charts..
+          axes: {
+            x: {
+              0: { side: 'top', label: 'HomeWork'} // Top x-axis.
+            }
+          },
+          bar: { groupWidth: "90%" }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('top_x_div'));
+        chart.draw(data, options);
+      };
+
+
+
+
+</script>
+
+<div id="top_x_div" style="width: 900px; height: 500px;"></div>

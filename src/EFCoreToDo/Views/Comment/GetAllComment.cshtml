@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.Title = "GetComments";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model IEnumerable<EFCoreToDo.Models.Comment>
+
+
+
+
+<h2>Comments</h2>
+@*<!DOCTYPE html>*@
+
+@*<hml>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>@ViewBag.Title</title>
+    </head>*@
+@*<body>*@
+
+<h1> Comments about this subject </h1>
+
+<table>
+    <div class="post">
+
+        <h2>
+            Description forum
+
+        </h2>
+        <thead>
+
+            <tr>
+                <th>    </th>
+                <th>  Content </th>
+                <th>  Publication Date </th>
+                <th>    </th>
+               
+
+
+            </tr>
+        </thead>
+    </div>
+
+    @foreach (var commentIt in Model)
+    {
+
+        <tbody>
+            <tr>
+                <td>@Html.DisplayFor(subject => commentIt.Subjects.Title)</td>
+                <td>@Html.DisplayFor(subject => commentIt.Content)</td>
+                <td>@Html.DisplayFor(subject => commentIt.Comment_Date)</td>
+                <td>@Html.DisplayFor(subject => commentIt.Users.FirstName)</td>
+                  
+            </tr>
+
+        </tbody>
+
+    }
+    @*<div>
+            @RenderBody()
+        </div>*@
+    @*</body>
+        </hml>*@
+</table>

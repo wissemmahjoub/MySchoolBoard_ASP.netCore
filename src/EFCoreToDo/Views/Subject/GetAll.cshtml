@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "GetSubjects";
+    Layout = "~/Views/Shared/_Forum.cshtml";
+}
+
+@model IEnumerable <EFCoreToDo.Models.Subject>
+ 
+
+@{
+    ViewBag.Title = "GetSubjects";
+}
+
+<h2>GetSubjects</h2>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+
+    <h1> Forum subjects </h1>
+
+    <div class="post">
+
+        <p>
+             Description
+             
+        </p>
+       
+            <tr>
+                <th>  Title </th>
+                <th>  Content </th>
+                <th>  Publication Date </th>
+
+                <th></th>
+            </tr>
+
+</div>
+     
+     @foreach (var subjectIt in Model)
+     {
+
+
+            <tr>
+                <td>@Html.DisplayFor(subject => subjectIt.Title)</td>
+                <td>@Html.DisplayFor(subject => subjectIt.Content)</td>
+                <td>@Html.DisplayFor(subject => subjectIt.Publication_Date)</td>
+            </tr>
+
+     }
+
+
+                <div>
+                    @RenderBody()
+                </div>
+</body>
+</html>

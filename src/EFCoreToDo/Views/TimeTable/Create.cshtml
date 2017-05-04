@@ -1,0 +1,106 @@
+﻿@{
+    ViewBag.Title = "Ajout TimeTable";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model EFCoreToDo.Models.TimeTable
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Add TimeTable</h2>
+
+<form asp-action="Create" enctype="multipart/form-data">
+    <div class="form-horizontal">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="TimeTableId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="TimeTableId" class="form-control" disabled="disabled" />
+                <span asp-validation-for="TimeTableId" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="DateDebut" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="DateDebut" class="form-control" />
+                <span asp-validation-for="DateDebut" class="text-danger" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="DateFin" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="DateFin" class="form-control" />
+                <span asp-validation-for="DateFin" class="text-danger" />
+            </div>
+        </div>
+
+        @*<div class="form-group">
+                <label asp-for="idclassee" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="idclassee" class="form-control" />
+                    <span asp-validation-for="idclassee" class="text-danger" />
+                </div>
+            </div>*@
+
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.idclassee, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.idclassee, (SelectList)ViewData["classess"], new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.idclassee)
+            </div>
+        </div>*@
+
+
+        <div class="form-group">
+            <label class="col-md-2 control-label">File</label>
+            <div class="col-md-10">
+
+
+                <input type="file" name="files" multiple />
+                <br><br>
+                @*<input type="submit" value="Upload" /><br><br>*@
+
+                @ViewBag.Message
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+
+        @if (ViewBag.Files != null)
+        {
+            <table border="1">
+                <caption>File List</caption>
+                <tr>
+                    <th>File</th>
+                    <th></th>
+                </tr>
+                @foreach (EFCoreToDo.Models.TimeTable fd in ViewBag.Files)
+                {
+                    <tr>
+                        <td>@fd.filenamee</td>
+                        <td>@Html.ActionLink("Download", "Download", "TimeTable", new { fileName = fd.filenamee }, new { target = "_blank" })</td>
+                    </tr>
+                }
+            </table>
+        }
+
+
+       
+
+
+
+
+    </div>
+</form>
+
+
+
+

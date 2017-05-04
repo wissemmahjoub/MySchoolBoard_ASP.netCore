@@ -1,0 +1,305 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@{
+    ViewBag.Title = "Form";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+
+
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/mytemplate/")css/bootstrap.css">
+            <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/mytemplate/")css/font-awesome.css">
+            <link rel='stylesheet' id='camera-css' href='@Url.Content("~/Content/mytemplate/")css/camera.css' type='text/css' media='all'>
+            <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/mytemplate/")css/slicknav.css">
+            <link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet" charset="utf-8" />
+            <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/mytemplate/")css/style.css">
+
+
+            <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+            <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700|Open+Sans:700' rel='stylesheet' type='text/css'>
+            <script type="text/javascript" src="@Url.Content("~/Content/mytemplate/")js/jquery.mobile.customized.min.js"></script>
+            <script type="text/javascript" src="@Url.Content("~/Content/mytemplate/")js/jquery.easing.1.3.js"></script>
+            <script type="text/javascript" src="@Url.Content("~/Content/mytemplate/")js/camera.min.js"></script>
+            <script type="text/javascript" src="@Url.Content("~/Content/mytemplate/")js/myscript.js"></script>
+            <script src="@Url.Content("~/Content/mytemplate/")js/sorting.js" type="text/javascript"></script>
+            <script src="@Url.Content("~/Content/mytemplate/")js/jquery.isotope.js" type="text/javascript"></script>
+            <!--script type="text/javascript" src="js/jquery.nav.js"></script-->
+
+            <script>
+                jQuery(function () {
+                    jQuery('#camera_wrap_1').camera({
+                        transPeriod: 500,
+                        time: 3000,
+                        height: '490px',
+                        thumbnails: false,
+                        pagination: true,
+                        playPause: false,
+                        loader: false,
+                        navigation: false,
+                        hover: false
+                    });
+                });
+            </script>
+
+
+
+
+
+
+
+            <!--contact start-->
+            @if (ViewBag.Error != null)
+            {
+                <h2>@ViewBag.Error</h2>
+            }
+            <div id="contact">
+                <div class="line5">
+                    <div class="container">
+                        <div class="row Ama">
+                            <div class="col-md-12">
+                                <h3>Got a Question? We&rsquo;re Here to Help!</h3>
+                                <p>Get in touch with us</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9 col-xs-12 forma">
+                            <form>
+
+                                <input type="text" class="col-md-6 col-xs-12 Email" name='Email' placeholder='Email *' />
+                                <input type="text" class="col-md-12 col-xs-12 subject" name='subject' placeholder='subject *' />
+                                <textarea type="text" class="col-md-12 col-xs-12 Message" name='Message' placeholder='Message *'></textarea>
+                                <div class="cBtn col-xs-12">
+                                    <ul>
+                                        @*<li class="clear"><a href="#"><i class="fa fa-times"></i>clear form</a></li>*@
+
+        @*<li class="send"><a href="#"><i class="fa fa-share"></i>Send Message</a></li>*@
+        <li><button class="btn btn-primary" type="submit"> Send Email</button></li>
+        </ul>
+    </div>
+    </form>
+    </div>
+    <div class="col-md-3 col-xs-12 cont">
+        <ul>
+            <li><i class="fa fa-home"></i>5512 Lorem Ipsum Vestibulum 666/13</li>
+            <li><i class="fa fa-phone"></i>+1 800 789 50 12, +1 800 450 6935</li>
+            <li><a href="#"><i class="fa fa-envelope"></i>mail@compname.com</li></a>
+            <li><i class="fa fa-skype"></i>compname</li>
+            <li><a href="#"><i class="fa fa-twitter"></i>Twitter</li></a>
+            <li><a href="#"><i class="fa fa-facebook-square"></i>Facebook</li></a>
+            <li><a href="#"><i class="fa fa-dribbble"></i>Dribbble</li></a>
+            <li><a href="#"><i class="fa fa-flickr"></i>Flickr</li></a>
+            <li><a href="#"><i class="fa fa-youtube-play"></i>YouTube</li></a>
+        </ul>
+    </div>
+    </div>
+    </div>
+    <div class="line6">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d48386.401887313725!2d-73.9407136!3d40.7147117!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sua!4v1402409149092" width="100%" height="750" frameborder="0" style="border:0"></iframe>
+    </div>
+    <div class="container">
+        <div class="row ftext">
+            <div class="col-md-12">
+                <a id="features"></a>
+                <h3>We Care About Our Students and Can Make Their Life Easier!</h3>
+                <p>The main peculiarity of template is the striking presentation when visitors just need to use the scrolling option to find all necessary information about your web project. </p>
+            </div>
+            <div class="cBtn">
+                <ul style="margin-top: 23px; margin-bottom: 0px; padding-left: 26px;">
+                    <li class="dowbload"><a href="#"><i class="fa fa-star"></i>View All Features</a></li>
+                    <li class="buy"><a href="#"><i class="fa fa-download"></i>Buy This Template</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="line7">
+        <div class="container">
+            <div class="row footer">
+                <div class="col-md-12">
+                    <h3>Subscribe for Our Newsletter!</h3>
+                    <p>Subscribe to our newsletter email to get notification about fresh news, latest promos, giveaways and free stuff from Skew. Stay always up-to-date!</p>
+                    <div class="fr">
+                        <div style="display: inline-block;">
+                            <input class="col-md-6 fEmail" name='Email' placeholder='Enter Your Email' />
+                            <a href="#" class="subS">Subscribe!</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="soc col-md-12">
+                    <ul>
+                        <li class="soc1"><a href="#"></a></li>
+                        <li class="soc2"><a href="#"></a></li>
+                        <li class="soc3"><a href="#"></a></li>
+                        <li class="soc4"><a href="#"></a></li>
+                        <li class="soc5"><a href="#"></a></li>
+                        <li class="soc6"><a href="#"></a></li>
+                        <li class="soc7"><a href="#"></a></li>
+                        <li class="soc8"><a href="#"></a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="lineBlack">
+        <div class="container">
+            <div class="row downLine">
+                <div class="col-md-12 text-right">
+                    <!--input  id="searchPattern" type="search" name="pattern" value="Search the Site" onblur="if(this.value=='') {this.value='Search the Site'; }" onfocus="if(this.value =='Search the Site' ) this.value='';this.style.fontStyle='normal';" style="font-style: normal;"/-->
+                    <input id="searchPattern" type="search" placeholder="Search the Site" /><i class="glyphicon glyphicon-search" style="font-size: 13px; color:#a5a5a5;" id="iS"></i>
+                </div>
+                <div class="col-md-6 text-left copy">
+                    <p>Copyright &copy; 2014 Timber HTML Template. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-6 text-right dm">
+                    <ul id="downMenu">
+                        <li class="active"><a href="#home">Home</a></li>
+                        <li><a href="@Url.Content("~/Content/mytemplate/")#about">About</a></li>
+                        <li><a href="@Url.Content("~/Content/mytemplate/")#project1">Projects</a></li>
+                        <li><a href="@Url.Content("~/Content/mytemplate/")#news">News</a></li>
+                        <li class="last"><a href="@Url.Content("~/Content/mytemplate/")#contact">Contact</a></li>
+                        <!--li><a href="#features">Features</a></li-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    <script src="" @Url.Content("~/Content/mytemplate/") js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
+    <script src="@Url.Content("~/Content/mytemplate/")js/bootstrap.min.js"></script>
+    <script src="@Url.Content("~/Content/mytemplate/")js/jquery.slicknav.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".bhide").click(function () {
+                $(".hideObj").slideDown();
+                $(this).hide(); //.attr()
+                return false;
+            });
+            $(".bhide2").click(function () {
+                $(".container.hideObj2").slideDown();
+                $(this).hide(); // .attr()
+                return false;
+            });
+
+            $('.heart').mouseover(function () {
+                $(this).find('i').removeClass('fa-heart-o').addClass('fa-heart');
+            }).mouseout(function () {
+                $(this).find('i').removeClass('fa-heart').addClass('fa-heart-o');
+            });
+
+            function sdf_FTS(_number, _decimal, _separator) {
+                var decimal = (typeof (_decimal) != 'undefined') ? _decimal : 2;
+                var separator = (typeof (_separator) != 'undefined') ? _separator : '';
+                var r = parseFloat(_number)
+                var exp10 = Math.pow(10, decimal);
+                r = Math.round(r * exp10) / exp10;
+                rr = Number(r).toFixed(decimal).toString().split('.');
+                b = rr[0].replace(/(\d{1,3}(?=(\d{3})+(?:\.\d|\b)))/g, "\$1" + separator);
+                r = (rr[1] ? b + '.' + rr[1] : b);
+
+                return r;
+            }
+
+            setTimeout(function () {
+                $('#counter').text('0');
+                $('#counter1').text('0');
+                $('#counter2').text('0');
+                setInterval(function () {
+
+                    var curval = parseInt($('#counter').text());
+                    var curval1 = parseInt($('#counter1').text().replace(' ', ''));
+                    var curval2 = parseInt($('#counter2').text());
+                    if (curval <= 707) {
+                        $('#counter').text(curval + 1);
+                    }
+                    if (curval1 <= 12280) {
+                        $('#counter1').text(sdf_FTS((curval1 + 20), 0, ' '));
+                    }
+                    if (curval2 <= 245) {
+                        $('#counter2').text(curval2 + 1);
+                    }
+                }, 2);
+
+            }, 500);
+        });
+    </script>
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            jQuery('#menu').slicknav();
+
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            var $menu = $("#menuF");
+
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100 && $menu.hasClass("default")) {
+                    $menu.fadeOut('fast', function () {
+                        $(this).removeClass("default")
+                               .addClass("fixed transbg")
+                               .fadeIn('fast');
+                    });
+                } else if ($(this).scrollTop() <= 100 && $menu.hasClass("fixed")) {
+                    $menu.fadeOut('fast', function () {
+                        $(this).removeClass("fixed transbg")
+                               .addClass("default")
+                               .fadeIn('fast');
+                    });
+                }
+            });
+        });
+        //jQuery
+    </script>
+    <script>
+        /*menu*/
+        function calculateScroll() {
+            var contentTop = [];
+            var contentBottom = [];
+            var winTop = $(window).scrollTop();
+            var rangeTop = 200;
+            var rangeBottom = 500;
+            $('.navmenu').find('a').each(function () {
+                contentTop.push($($(this).attr('href')).offset().top);
+                contentBottom.push($($(this).attr('href')).offset().top + $($(this).attr('href')).height());
+            })
+            $.each(contentTop, function (i) {
+                if (winTop > contentTop[i] - rangeTop && winTop < contentBottom[i] - rangeBottom) {
+                    $('.navmenu li')
+					.removeClass('active')
+					.eq(i).addClass('active');
+                }
+            })
+        };
+
+        $(document).ready(function () {
+            calculateScroll();
+            $(window).scroll(function (event) {
+                calculateScroll();
+            });
+            $('.navmenu ul li a').click(function () {
+                $('html, body').animate({ scrollTop: $(this.hash).offset().top - 80 }, 800);
+                return false;
+            });
+        });
+    </script>
+    <script type="text/javascript" charset="utf-8">
+
+        jQuery(document).ready(function () {
+            jQuery(".pretty a[rel^='prettyPhoto']").prettyPhoto({ animation_speed: 'normal', theme: 'light_square', slideshow: 3000, autoplay_slideshow: true, social_tools: '' });
+
+        });
+    </script>

@@ -1,0 +1,89 @@
+﻿@{
+    ViewBag.Title = "Edit a Homework";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model EFCoreToDo.Models.Homework
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<form asp-action="Edit">
+    <div class="form-horizontal">
+        <h4>Homework</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="HomeworkId" />
+
+        <div class="form-group">
+            <label asp-for="Label" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Label" class="form-control" />
+                <span asp-validation-for="Label" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="difficulty" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="difficulty" class="form-control" />
+                <span asp-validation-for="difficulty" class="text-danger"></span>
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <label asp-for="HomeworkDescription" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="HomeworkDescription" class="form-control" />
+                <span asp-validation-for="HomeworkDescription" class="text-danger"></span>
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <label asp-for="DateLimit" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="DateLimit" class="form-control" />
+                <span asp-validation-for="DateLimit" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.idmodule, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.idmodule, (SelectList)ViewData["modules"], new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.idmodule)
+            </div>
+        </div>
+
+
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+
+
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+
+
+
+
+
+
+
+@*-By-Wissem-*@

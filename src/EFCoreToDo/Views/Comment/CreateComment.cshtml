@@ -1,0 +1,76 @@
+﻿@{
+    ViewBag.Title = "CreateComment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model EFCoreToDo.Models.Comment
+
+ 
+  
+
+<h1>HELOO COmMENT you can post here your comment </h1>
+  
+
+@{
+    ViewBag.Title = "CreateComment";
+}
+
+<h2>Comment here your Post</h2>
+
+ @using (Html.BeginForm("CreateComment", "Comment"))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Add Comment</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Subjects.SubjectId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Subjects.SubjectId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Subjects.SubjectId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Content, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Content, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        
+        <div class="form-group">
+            @Html.LabelFor(model => model.Subjects.SubjectId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*@Html.DropDownListFor(model => model.Subjects.SubjectId, (SelectList)ViewData["subjects"], new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.ValidationMessageFor(model => model.Subjects.SubjectId)
+            </div>
+        </div>
+
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.Users.CIN, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.Users.CIN, (SelectList)ViewData["subjects"], new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Users.CIN)
+            </div>
+        </div>*@
+
+
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Comment" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+
+}
+ 
+

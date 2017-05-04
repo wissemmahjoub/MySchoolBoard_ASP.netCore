@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "GetUsers";
+    Layout = "~/Views/Shared/_Forum.cshtml";
+}
+
+@model IEnumerable<EFCoreToDo.Models.User>
+
+
+
+<table>
+    <div class="post">
+
+        <h2>
+            Details Users
+
+        </h2>
+        <thead>
+
+            <tr>
+                <th>  CIN </th>
+                <th>  Adress </th>
+                <th>  BirthDate	 </th>
+                <th>  E_mail </th>
+                <th>  FirstName </th>
+                <th>  LastName</th>
+                <th>  Password</th>
+                <th>  Job</th>
+                <th>  Grade</th>
+                <th>  classs of student</th>
+                
+
+            </tr>
+        </thead>
+    </div>
+
+@foreach (var userIt in Model)
+    {
+
+        <tbody>
+            <tr>
+                <td>@Html.DisplayFor(user => userIt.CIN)</td>
+                <td>@Html.DisplayFor(user => userIt.Adress)</td>
+                <td>@Html.DisplayFor(user => userIt.BirthDate)</td>
+                <td>@Html.DisplayFor(user => userIt.E_mail)</td>
+                <td>@Html.DisplayFor(user => userIt.FirstName)</td>
+                <td>@Html.DisplayFor(user => userIt.LastName)</td>
+                <td>@Html.DisplayFor(user => userIt.Password)</td>
+                
+              
+
+
+            </tr>
+
+        </tbody>
+
+    }
+    @*<div>
+            @RenderBody()
+        </div>*@
+    @*</body>
+        </hml>*@
+</table>
+
+
+@*<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>*@
